@@ -1,0 +1,23 @@
+//ASSIGNMENT QUESTIONS AND SOLUTIONS
+
+//1.program to search for a particular character in a string
+let str="This is my day two assignment solution";
+console.log(str.charAt('3'));
+
+//2.program to convert minutes to seconds
+let minute=2;
+seconds=minute*60;
+console.log("The result of converting minutes to seconds" +seconds);
+
+//3.program to search  for a element in array of strings
+let ar1=['banana','apple','orange','mango'];
+console.log(ar1.indexOf('orange'));
+
+//4.program to display only elements containing 'a' in them from a array
+let ar1=['banana','apple','orange','mango'];
+console.log(ar1.find('a'));
+
+//5.print an array in reverse order
+let ar=['one','two','three','four'];
+console.log(ar.reverse());
+
