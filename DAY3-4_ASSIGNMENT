@@ -1,0 +1,133 @@
+QUESTION ONE SOLUTION 
+//HTML CODE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="Domman.js">
+    </script>
+    <img src="https://images.unsplash.com/photo-1435783459217-ee7fe5414abe?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+    width="500px" id="image"/><br/>
+    <button onclick="change()" >FIRST BUTTON </button><br/>
+    <button onclick="changeimg()">SECOND BUTTON</button><br/>
+    <button onclick="changenextimg()">THIRD BUTTON</button><br/>
+</body>
+</html>
+
+//Domman.js
+
+//question1-create the webpage contains an image and 3 buttons
+//for first button-first image should come back
+function change(){
+    const ele3=document.getElementById("image");
+    const newurl4="https://images.unsplash.com/photo-1435783459217-ee7fe5414abe?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60";
+    ele3.src=newurl4;
+}
+
+//for second button - change the existing image to new image
+function changeimg(){
+    const ele=document.getElementById("image");
+    const newUrl="https://images.unsplash.com/photo-1548678756-aa5ed92c4796?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60";
+    ele.src=newUrl;
+}
+//for third button -change it once again
+function changenextimg(){
+    const ele2=document.getElementById("image");
+    const newUrl2="https://images.unsplash.com/photo-1444930694458-01babf71870c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1430&q=80";
+    ele2.src=newUrl2;
+}
+
+QUESTION 2 SOLUTION
+//HTML CODE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width", initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="ques2.js"></script>
+    USER NAME:
+    <input type="text"   id="input" placeholder="Enter name" ></br>
+    <button onclick="copied()">LOGIN</button> </br>
+    PASSWORD:
+    <input type="text"  id="output" placeholder="password"></br>
+</body>
+</html>
+
+//ques2.js
+
+//Ques2:onclick of the button the content of first should be copied into second
+//B
+function copied(){
+    document.getElementById("output").value=document.getElementById("input").value;
+    
+}
+//QUESTION3 SOLUTION
+
+//HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="ques3.js">
+    </script>
+</body>
+</html>
+
+//ques3.js
+
+ //QUES 3 solutions 
+    //A.Creating array of objects having the specified properties
+let Employees=[
+    {
+        name:"Kilar",
+        age:"25",
+        country:"panjab",
+        Hobbies:["Reading","Writing"],
+    },
+    {
+        name:"sita",
+        age:"30",
+        country:"India",
+        Hobbies:["Dancing","Writing"],
+    },
+    {
+        name:"Kumar",
+        age:"40",
+        country:"India",
+        Hobbies:["Reading","Travelling"],
+    }
+];
+//B.displaying objects in console
+for(let i=0 ; i<=2 ; i++)
+{
+    console.log(Employees[i]);
+}
+
+//QUETION 4 SOLUTION
+//A.Displaying all the object having age less than 30
+function ages(){
+    if ((Employees[i].age) < 30){
+        console.log(Employees[i].age);
+    }
+
+}
+//B.display all the object having country india
+function cntry(){
+    if ((Employees[i].country)=="India"){
+        console.log(Employees[i].country);
+    }
+
+}
+
