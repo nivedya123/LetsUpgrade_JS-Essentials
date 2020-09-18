@@ -1,0 +1,159 @@
+//QUESTION 1 SOLUTION HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees</title>
+    <style>
+    body{
+        margin:0px;
+        padding:0px;
+    }
+    .data{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            height: 500px;
+            width:80% ;
+            background-color:rgb(130, 238, 179);
+            margin-left: 10%;
+            margin-top: 50px;
+            padding: 20px;
+            display: inline-block;
+        }
+        .table{ 
+            width:100%;
+            height: 50%;
+            text-align: center;
+        }
+        th{
+            padding: 1%;
+        }
+        th,td{
+            background-color:yellowgreen;
+        }
+        td:hover{background-color: rgb(226, 208, 42);}
+        th:hover{background-color: rgb(196, 44, 70);}
+        button{
+            padding :10px;
+            background-color:rgb(130, 238, 179);
+            shape-margin:10px;
+            shape-outside: border-box;
+        }
+        button:hover{
+            background-color: sandybrown;
+        }
+
+                         </style>
+</head>
+<body>
+    <div class="data">
+    <h1>Employee Details</h1>
+    <div>
+        <input type="text" placeholder="Search By Name" id="searchName"
+         onkeyup="sname()"/>
+        <input type="text" placeholder="Search By City" id="searchCity" 
+        onkeyup="searchbycity()"/>
+
+    </div>
+        <table border="2"  class="table">
+            <thead>
+                <tr>
+                    <th>SR_NUM</th>
+                    <th>Name</th>
+                    <th>AGE</th>
+                    <th>CITY</th>
+                    <th>SALARY</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody class="tdatas">
+            </tbody>
+    <script src="project_day6.js"></script>
+    </table>
+    </div>
+</body>
+</html>
+//JAVASCRIPT
+let details=[
+    {
+        name:"Tej",
+        age:23,
+        city:"Lyon",
+        salary:"25000",
+    },
+    {
+        name:"Kapool",
+        age:32,
+        city:"Lille",
+        salary:"85000",
+    },
+    {
+        name:"Badar",
+        age:45,
+        city:"Dijon",
+        salary:"78000",
+    },
+    {
+        name:"Somadar",
+        age:28,
+        city:"Colmar",
+        salary:"17100",
+    },
+    {
+        name:"Badew",
+        age:30,
+        city:"Nates",
+        salary:"17952",
+    },
+];
+function display(){
+    let tdata=" ";
+
+    details.forEach(function (details,index){
+        let crow=`<tr>
+        <td>${index+1}</td>
+        <td>${details.name}</td>
+        <td>${details.age}</td>
+        <td>${details.city}</td>
+        <td>${details.salary}</td>
+
+        <td>
+        <button onclick='deleted(${index})'>DELETE </button>
+
+        </tr>`;
+        tdata+=crow;
+        
+    });
+    document.getElementsByClassName("tdatas")[0].innerHTML=tdata;
+}
+display();
+
+
+function sname(){
+    let searchValue1=document.getElementById("searchName").value;
+    let newData1=details.filter(function(details){
+        return(
+            details.name.toUpperCase().indexOf(searchValue1.toUpperCase())!=-1
+    );
+    })
+ display(newData1);
+
+}
+function deleted(index){
+    details.splice(index,1);
+    display(index);
+}
+
+function searchbycity(){
+    let searchValue2=document.getElementById("searchCity").value;
+    let newData2=details.filter(function(details){
+        return(
+            details.city.toUpperCase().indexOf(searchValue2.toUpperCase())!=-1
+    );
+    })
+  display(newData2);
+
+}
+
+
+
